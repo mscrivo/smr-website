@@ -1,0 +1,81 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <span class="eyebrow">Get in touch</span>
+      <h2 class="contact-title">Have a project in mind?</h2>
+      <p class="contact-lead">
+        Tell me what you’re trying to do and I’ll get back to you with honest advice and a clear
+        next step. Serving the {site.region}.
+      </p>
+      <a class="btn btn-primary contact-btn" href={`mailto:${site.email}`}>
+        Email {site.email}
+      </a>
+      <p class="contact-note">
+        Prefer to write it out? Send the details and I’ll follow up promptly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-card {
+    position: relative;
+    text-align: center;
+    padding: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: calc(var(--radius) + 4px);
+    background: linear-gradient(180deg, rgba(30, 41, 59, 0.5), rgba(9, 14, 26, 0.5));
+    overflow: hidden;
+  }
+
+  .contact-glow {
+    position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.22), transparent 65%);
+    pointer-events: none;
+  }
+
+  .contact-card > * {
+    position: relative;
+  }
+
+  .eyebrow {
+    justify-content: center;
+  }
+
+  .eyebrow::before {
+    display: none;
+  }
+
+  .contact-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.7rem);
+    margin-top: 0.7rem;
+  }
+
+  .contact-lead {
+    color: var(--text-muted);
+    max-width: 50ch;
+    margin: 1rem auto 0;
+  }
+
+  .contact-btn {
+    margin-top: 2rem;
+    font-size: 1.05rem;
+    padding: 0.95rem 1.8rem;
+  }
+
+  .contact-note {
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    margin-top: 1.1rem;
+  }
+</style>

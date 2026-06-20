@@ -1,0 +1,90 @@
+---
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <img src="/logo.svg" width="34" height="34" alt="" />
+      <div>
+        <p class="footer-name">{site.name}</p>
+        <p class="footer-region">{site.region} · Ontario, Canada</p>
+      </div>
+    </div>
+
+    <nav class="footer-nav" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href={`mailto:${site.email}`}>Contact</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <p>© {year} {site.name}. All rights reserved.</p>
+    <p>Built for {site.region} homes &amp; small businesses.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    background: rgba(7, 11, 22, 0.6);
+    padding-block: 2.5rem 1.8rem;
+    margin-top: 2rem;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .footer-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+  }
+
+  .footer-region {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-nav a {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .footer-nav a:hover {
+    color: var(--text);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+    font-size: 0.82rem;
+  }
+
+  .footer-bottom p {
+    margin: 0;
+  }
+</style>

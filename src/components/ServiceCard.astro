@@ -1,0 +1,84 @@
+---
+import type { Service } from '../data/site';
+
+type Props = Service;
+
+const { title, description, icon } = Astro.props;
+---
+
+<article class="card">
+  <div class="card-icon" aria-hidden="true">
+    <svg
+      viewBox="0 0 24 24"
+      width="26"
+      height="26"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="1.6"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d={icon}></path>
+    </svg>
+  </div>
+  <h3 class="card-title">{title}</h3>
+  <p class="card-desc">{description}</p>
+</article>
+
+<style>
+  .card {
+    position: relative;
+    padding: 1.6rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    overflow: hidden;
+    transition:
+      transform 0.18s ease,
+      border-color 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08), transparent 55%);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card:hover::before {
+    opacity: 1;
+  }
+
+  .card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    color: var(--accent);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    margin-bottom: 1.1rem;
+  }
+
+  .card-title {
+    font-size: 1.18rem;
+    font-weight: 600;
+  }
+
+  .card-desc {
+    color: var(--text-muted);
+    font-size: 0.97rem;
+    margin-top: 0.6rem;
+  }
+</style>

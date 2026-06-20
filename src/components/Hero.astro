@@ -1,0 +1,210 @@
+---
+import { site } from '../data/site';
+---
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">{site.region}</span>
+      <h1 class="hero-title">
+        Reliable tech help,<br />
+        <span class="accent">built around you.</span>
+      </h1>
+      <p class="hero-lead">
+        {site.name} is your local partner for custom PC builds, networks, surveillance, remote support,
+        and software — serving homes and small businesses across the {site.region}.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href={`mailto:${site.email}`}>Start a project</a>
+        <a class="btn btn-ghost" href="#services">Explore services</a>
+      </div>
+      <ul class="hero-trust">
+        <li>One-on-one service</li>
+        <li>Honest, plain-language advice</li>
+        <li>Local &amp; responsive</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-amber"></span>
+          <span class="dot dot-green"></span>
+          <span class="terminal-name">smr@gta:~</span>
+        </div>
+        <pre
+          class="terminal-body"><code><span class="ln"><span class="prompt">$</span> smr --status</span>
+<span class="ln out">› systems: <span class="ok">online</span></span>
+<span class="ln out">› coverage: Greater Toronto Area</span>
+<span class="ln out">› response: <span class="ok">fast</span></span>
+<span class="ln"><span class="prompt">$</span> smr --help<span class="cursor">▋</span></span></code></pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-block: clamp(3rem, 7vw, 5.5rem);
+    position: relative;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 6vw, 4rem);
+    font-weight: 700;
+    margin-top: 1.1rem;
+  }
+
+  .hero-title .accent {
+    background: linear-gradient(120deg, var(--sky-400), var(--sky-500));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .hero-lead {
+    color: var(--text-muted);
+    font-size: 1.12rem;
+    max-width: 48ch;
+    margin-top: 1.4rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2rem;
+  }
+
+  .hero-trust {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    padding: 0;
+    margin: 2.2rem 0 0;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+  }
+
+  .hero-trust li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .hero-trust li::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 8px var(--accent);
+  }
+
+  /* Terminal visual */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+  }
+
+  .terminal {
+    width: 100%;
+    max-width: 420px;
+    background: #070b16;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-glow);
+    overflow: hidden;
+  }
+
+  .terminal-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(30, 41, 59, 0.5);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+  }
+
+  .dot-red {
+    background: var(--dot-red);
+  }
+  .dot-amber {
+    background: var(--dot-amber);
+  }
+  .dot-green {
+    background: var(--dot-green);
+  }
+
+  .terminal-name {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+  }
+
+  .terminal-body {
+    margin: 0;
+    padding: 1.3rem 1.4rem 1.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    line-height: 1.9;
+    color: var(--slate-300);
+    overflow-x: auto;
+  }
+
+  .ln {
+    display: block;
+  }
+
+  .prompt {
+    color: var(--accent);
+    margin-right: 0.5rem;
+  }
+
+  .out {
+    color: var(--text-muted);
+  }
+
+  .ok {
+    color: var(--dot-green);
+  }
+
+  .cursor {
+    color: var(--accent);
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-visual {
+      order: -1;
+    }
+    .terminal {
+      max-width: 100%;
+    }
+  }
+</style>

@@ -1,0 +1,33 @@
+---
+import { services } from '../data/site';
+import ServiceCard from './ServiceCard.astro';
+---
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">What I do</span>
+      <h2 class="section-title">Services</h2>
+      <p class="section-lead">
+        End-to-end technology help — from the hardware on your desk to the network in your walls and
+        the software that runs your business.
+      </p>
+    </div>
+
+    <div class="grid">
+      {services.map((service) => <ServiceCard {...service} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .section-head {
+    margin-bottom: 2.5rem;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+</style>

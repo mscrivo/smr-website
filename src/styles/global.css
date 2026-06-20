@@ -1,0 +1,210 @@
+/* ============================================================
+   SMR Computer Services — global styles
+   Terminal/pulse aesthetic: sky-blue accents on dark navy.
+   ============================================================ */
+
+:root {
+  /* Brand palette (derived from the logo) */
+  --sky-500: #0ea5e9;
+  --sky-400: #38bdf8;
+  --slate-950: #090e1a;
+  --slate-900: #0f172a;
+  --slate-800: #1e293b;
+  --slate-700: #334155;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-100: #f1f5f9;
+
+  /* Terminal dots */
+  --dot-red: #ef4444;
+  --dot-amber: #f59e0b;
+  --dot-green: #10b981;
+
+  /* Semantic tokens */
+  --bg: var(--slate-950);
+  --bg-elevated: #0c1426;
+  --surface: rgba(30, 41, 59, 0.4);
+  --border: rgba(51, 65, 85, 0.6);
+  --text: var(--slate-100);
+  --text-muted: var(--slate-400);
+  --accent: var(--sky-400);
+  --accent-strong: var(--sky-500);
+
+  --radius: 14px;
+  --radius-sm: 10px;
+  --maxw: 1120px;
+  --shadow-glow: 0 0 0 1px rgba(56, 189, 248, 0.15), 0 18px 40px -20px rgba(14, 165, 233, 0.45);
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', var(--font-sans);
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 15% -10%, rgba(14, 165, 233, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 0%, rgba(56, 189, 248, 0.08), transparent 40%),
+    linear-gradient(rgba(51, 65, 85, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(51, 65, 85, 0.25) 1px, transparent 1px);
+  background-size:
+    auto,
+    auto,
+    44px 44px,
+    44px 44px;
+  background-position:
+    0 0,
+    0 0,
+    center top,
+    center top;
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.18s ease;
+}
+
+a:hover {
+  color: var(--sky-500);
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Layout helpers */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section {
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  margin-top: 0.8rem;
+}
+
+.section-lead {
+  color: var(--text-muted);
+  max-width: 46ch;
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.98rem;
+  padding: 0.8rem 1.4rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--sky-400), var(--sky-500));
+  color: #04121f;
+  box-shadow: 0 14px 30px -14px rgba(14, 165, 233, 0.8);
+}
+
+.btn-primary:hover {
+  color: #04121f;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px -14px rgba(56, 189, 248, 0.9);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btn-ghost:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(56, 189, 248, 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

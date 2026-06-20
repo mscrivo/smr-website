@@ -1,0 +1,110 @@
+---
+import { site } from '../data/site';
+
+const navLinks = [
+  { href: '#services', label: 'Services' },
+  { href: '#about', label: 'About' },
+  { href: '#contact', label: 'Contact' },
+];
+---
+
+<header class="header">
+  <div class="container header-inner">
+    <a class="brand" href="#top" aria-label={`${site.name} home`}>
+      <img class="brand-mark" src="/logo.svg" width="40" height="40" alt="" />
+      <span class="brand-text">
+        <span class="brand-name">{site.shortName}</span>
+        <span class="brand-sub">Computer Services</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
+      <a class="btn btn-primary nav-cta" href={`mailto:${site.email}`}>Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(12px);
+    background: rgba(9, 14, 26, 0.72);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--text);
+  }
+
+  .brand:hover {
+    color: var(--text);
+  }
+
+  .brand-mark {
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.35));
+  }
+
+  .brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.05;
+  }
+
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-sub {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+  }
+
+  .nav > a:not(.nav-cta) {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  .nav > a:not(.nav-cta):hover {
+    color: var(--text);
+  }
+
+  .nav-cta {
+    padding: 0.55rem 1.05rem;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 720px) {
+    .nav > a:not(.nav-cta) {
+      display: none;
+    }
+    .brand-sub {
+      display: none;
+    }
+  }
+</style>
