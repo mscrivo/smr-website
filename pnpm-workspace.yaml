@@ -1,0 +1,12 @@
+# esbuild/sharp ship prebuilt binaries; their postinstall build scripts aren't
+# needed for this static build (no raster image optimization), so don't run them.
+allowBuilds:
+  esbuild: false
+  sharp: false
+
+# pnpm 11 enforces a default minimum-release-age supply-chain gate (~24h).
+# nanoid is a transitive dep of Astro that publishes frequently; exclude it so
+# fresh point releases don't block `pnpm install --frozen-lockfile` in CI. The
+# gate still applies to every other package.
+minimumReleaseAgeExclude:
+  - nanoid
