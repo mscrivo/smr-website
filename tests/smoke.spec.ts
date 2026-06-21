@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { site } from '../src/data/site';
 
 test.describe('home page smoke tests', () => {
   test('renders the hero, brand, and every service card', async ({ page }) => {
@@ -27,9 +28,9 @@ test.describe('home page smoke tests', () => {
     await page.goto('/');
 
     await expect(page.getByRole('heading', { name: 'Have a project in mind?' })).toBeVisible();
-    await expect(page.getByRole('link', { name: /Email mscrivo@gmail\.com/ })).toHaveAttribute(
+    await expect(page.getByRole('link', { name: `Email ${site.email}` })).toHaveAttribute(
       'href',
-      'mailto:mscrivo@gmail.com'
+      `mailto:${site.email}`
     );
   });
 });
