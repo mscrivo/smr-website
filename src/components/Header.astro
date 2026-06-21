@@ -19,9 +19,18 @@ const navLinks = [
     </a>
 
     <nav class="nav" aria-label="Primary">
-      {navLinks.map((link) => <a href={link.href}>{link.label}</a>)}
-      <a class="btn btn-primary nav-cta" href={`mailto:${site.email}`}>Get in touch</a>
+      <ul class="nav-links">
+        {
+          navLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
     </nav>
+
+    <a class="btn btn-primary nav-cta" href={`mailto:${site.email}`}>Get in touch</a>
   </div>
 </header>
 
@@ -38,14 +47,15 @@ const navLinks = [
   .header-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 68px;
+    gap: 1.5rem;
+    min-height: 68px;
   }
 
   .brand {
     display: inline-flex;
     align-items: center;
     gap: 0.7rem;
+    margin-right: auto;
     color: var(--text);
   }
 
@@ -78,19 +88,22 @@ const navLinks = [
     color: var(--text-muted);
   }
 
-  .nav {
+  .nav-links {
     display: flex;
     align-items: center;
     gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .nav > a:not(.nav-cta) {
+  .nav-links a {
     color: var(--text-muted);
     font-weight: 500;
     font-size: 0.95rem;
   }
 
-  .nav > a:not(.nav-cta):hover {
+  .nav-links a:hover {
     color: var(--text);
   }
 
@@ -99,12 +112,35 @@ const navLinks = [
     font-size: 0.9rem;
   }
 
+  /* On small screens the brand and CTA stay on the first row while the
+     nav links wrap to a centered second row — keeping them reachable. */
   @media (max-width: 720px) {
-    .nav > a:not(.nav-cta) {
-      display: none;
+    .header-inner {
+      flex-wrap: wrap;
+      row-gap: 0.7rem;
+      padding-block: 0.65rem;
+      min-height: 0;
     }
+
     .brand-sub {
       display: none;
+    }
+
+    .nav-cta {
+      order: 2;
+    }
+
+    .nav {
+      order: 3;
+      flex-basis: 100%;
+    }
+
+    .nav-links {
+      width: 100%;
+      justify-content: center;
+      gap: 1.6rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid var(--border);
     }
   }
 </style>

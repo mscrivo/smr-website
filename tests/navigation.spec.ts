@@ -13,15 +13,19 @@ test('desktop shows the primary nav links', async ({ page }, testInfo) => {
   await expect(page).toHaveURL(/#contact$/);
 });
 
-test('mobile collapses the text links but keeps the email CTA', async ({ page }, testInfo) => {
+test('mobile keeps the nav links reachable and the email CTA visible', async ({
+  page,
+}, testInfo) => {
   test.skip(testInfo.project.name !== 'mobile', 'mobile-only layout');
 
   await page.goto('/');
   const nav = page.getByRole('navigation', { name: 'Primary' });
 
-  // The plain text links are hidden on small screens.
-  await expect(nav.getByRole('link', { name: 'Services', exact: true })).toBeHidden();
+  // The links wrap to a second row but stay visible and reachable on small screens.
+  for (const label of ['Services', 'About', 'Contact']) {
+    await expect(nav.getByRole('link', { name: label, exact: true })).toBeVisible();
+  }
 
   // The "Get in touch" call to action stays available.
-  await expect(nav.getByRole('link', { name: 'Get in touch' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Get in touch' })).toBeVisible();
 });

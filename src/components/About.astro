@@ -1,5 +1,5 @@
 ---
-import { site } from '../data/site';
+import { site, services } from '../data/site';
 ---
 
 <section class="section about" id="about">
@@ -30,7 +30,7 @@ import { site } from '../data/site';
         <span class="stat-label">Based in &amp; serving the Greater Toronto Area</span>
       </li>
       <li>
-        <span class="stat-value">6</span>
+        <span class="stat-value">{services.length}</span>
         <span class="stat-label">Core services under one roof</span>
       </li>
     </ul>

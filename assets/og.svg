@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1224"/>
+      <stop offset="1" stop-color="#070b16"/>
+    </linearGradient>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e2f3ff"/>
+      <stop offset="1" stop-color="#7dd3fc"/>
+    </linearGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#334155" stroke-width="1" opacity="0.18"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+  <ellipse cx="600" cy="120" rx="520" ry="220" fill="#0ea5e9" opacity="0.10"/>
+
+  <!-- Terminal / pulse mark (from the brand favicon), centered near the top -->
+  <g transform="translate(525,86) scale(2.34)">
+    <rect x="6" y="9" width="52" height="46" rx="8" fill="#090E1A" stroke="url(#frame)" stroke-width="3"/>
+    <line x1="6" y1="21" x2="58" y2="21" stroke="#1E293B" stroke-width="2"/>
+    <circle cx="14" cy="15" r="2" fill="#EF4444"/>
+    <circle cx="21" cy="15" r="2" fill="#F59E0B"/>
+    <circle cx="28" cy="15" r="2" fill="#10B981"/>
+    <path d="M 14,30 L 19,34 L 14,38" fill="none" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <line x1="23" y1="38" x2="31" y2="38" stroke="#38BDF8" stroke-width="2.4" stroke-linecap="round"/>
+    <path d="M 30,42 L 38,42 L 41,30 L 45,52 L 47,38 L 50,42 L 56,42" fill="none" stroke="#0EA5E9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <text x="600" y="420" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="700" font-size="76" fill="url(#title)">SMR Computer Services</text>
+  <rect x="540" y="448" width="120" height="4" rx="2" fill="#0EA5E9"/>
+  <text x="600" y="506" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-weight="400" font-size="30" fill="#94A3B8">Technology solutions for homes &amp; small businesses</text>
+  <text x="600" y="560" text-anchor="middle" font-family="Consolas, monospace" font-weight="600" font-size="24" letter-spacing="3" fill="#38BDF8">GREATER TORONTO AREA</text>
+</svg>
