@@ -1,0 +1,14 @@
+# Normalize line endings to LF in the repo; deploys to a Linux host.
+* text=auto eol=lf
+
+# Lockfiles and config stay LF
+pnpm-lock.yaml text eol=lf
+
+# Treat these as binary (no line-ending conversion, no diffs)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
