@@ -44,8 +44,9 @@ import { site } from '../data/site';
     pointer-events: none;
   }
 
-  .contact-card > * {
+  .contact-card > *:not(.contact-glow) {
     position: relative;
+    z-index: 1;
   }
 
   .eyebrow {

@@ -11,7 +11,7 @@ export const site = {
     'SMR Computer Services provides custom PC builds, network installations, surveillance setup, remote support, and custom software for clients across the Greater Toronto Area.',
   region: 'Greater Toronto Area',
   url: 'https://smrcomputers.ca',
-  email: 'mscrivo@gmail.com',
+  email: 'info@smrcomputers.ca',
   owner: 'Michael Scrivo',
 } as const;
 
