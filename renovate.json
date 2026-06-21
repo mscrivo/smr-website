@@ -3,13 +3,13 @@
   "extends": [
     "config:recommended",
     ":dependencyDashboard",
-    ":semanticCommits",
-    "helpers:pinGitHubActionDigests"
+    ":semanticCommits"
   ],
   "timezone": "America/Toronto",
   "schedule": ["before 6am on monday"],
   "labels": ["dependencies"],
   "rangeStrategy": "bump",
+  "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 4,
   "lockFileMaintenance": {
