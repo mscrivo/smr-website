@@ -49,13 +49,46 @@ src/
   styles/global.css  design tokens & base styles
 ```
 
-## Deployment
+## Testing
 
-The site builds to fully static files in `dist/`, ready to serve from any Linux web host
-(nginx, Apache, Caddy). Build with:
+End-to-end smoke tests (Playwright) build the site and check the rendered page across desktop
+and mobile viewports:
 
 ```bash
-pnpm build
+pnpm test:e2e
 ```
 
-Then deploy the contents of `dist/` to the web root.
+## Deployment
+
+Pushing to `main` deploys automatically — no manual steps. The [`CI`](.github/workflows/ci.yml)
+workflow:
+
+1. **Builds & gates** — installs deps, runs `pnpm lint` (astro check + ESLint + Prettier),
+   `pnpm build`, and the Playwright `pnpm test:e2e` suite. The deploy only runs if all of these
+   pass.
+2. **Ships the build** — on `main`, the tested `dist/` is rsynced over SSH to the server into a
+   timestamped release dir (`releases/<git-sha>`), hardlinking unchanged files from the live
+   release to save bandwidth.
+3. **Swaps atomically** — a `current` symlink is repointed to the new release in one `mv`, so the
+   site is served by [Caddy](https://caddyserver.com/) from `current/` with zero downtime and no
+   reload. The five most recent releases are kept for instant rollback.
+
+```text
+/var/www/smrcomputers.ca/site/
+  releases/<git-sha>/   each deploy
+  current -> releases/<git-sha>   atomic symlink; Caddy's web root
+```
+
+**Rollback:** repoint `current` at a previous release dir — no rebuild, no Caddy reload.
+
+### Required repository secrets
+
+The deploy job authenticates with a dedicated SSH key (the `deploy` user on the server):
+
+| Secret        | Value                                            |
+| ------------- | ------------------------------------------------ |
+| `SSH_HOST`    | server hostname / IP                             |
+| `SSH_USER`    | `deploy`                                         |
+| `SSH_KEY`     | private SSH key authorized for the `deploy` user |
+| `DEPLOY_PATH` | `/var/www/smrcomputers.ca/site`                  |
+| `SSH_PORT`    | _(optional, defaults to `22`)_                   |
