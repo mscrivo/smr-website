@@ -57,6 +57,13 @@ import { site } from '../data/site';
     align-items: center;
   }
 
+  /* Allow grid columns to shrink below their content's intrinsic width so the
+     terminal's long lines scroll internally instead of overflowing the page. */
+  .hero-copy,
+  .hero-visual {
+    min-width: 0;
+  }
+
   .hero-title {
     font-size: clamp(2.4rem, 6vw, 4rem);
     font-weight: 700;
