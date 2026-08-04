@@ -18,10 +18,10 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "astro": "^7.0.7"
+    "astro": "^7.1.6"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.9",
+    "@astrojs/check": "^0.9.10",
     "@playwright/test": "^1.62.1",
     "@typescript/native": "npm:typescript@^7.0.2",
     "@eslint/js": "^10.0.1",
