@@ -8,6 +8,7 @@
   "minimumReleaseAge": "3 days",
   "prConcurrentLimit": 10,
   "prHourlyLimit": 4,
+  "postUpdateOptions": ["pnpmDedupe"],
   "lockFileMaintenance": {
     "enabled": true,
     "schedule": ["before 6am on monday"]
