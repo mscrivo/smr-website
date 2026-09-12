@@ -15,7 +15,9 @@ import ServiceCard from './ServiceCard.astro';
     </div>
 
     <div class="grid">
-      {services.map((service) => <ServiceCard {...service} />)}
+      {services.map((service) => (
+        <ServiceCard {...service} />
+      ))}
     </div>
   </div>
 </section>
