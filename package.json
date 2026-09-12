@@ -14,7 +14,17 @@
     "lint:fix": "eslint . --fix && prettier --write .",
     "format": "prettier --write .",
     "pretest:e2e": "astro build",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,mjs,ts,astro}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{css,md,json,yml,yaml}": [
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -27,6 +37,8 @@
     "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^10.10.0",
     "eslint-plugin-astro": "^3.1.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
     "prettier": "^3.9.6",
     "prettier-plugin-astro": "^1.0.0",
     "typescript": "npm:@typescript/typescript6@^6.0.2",

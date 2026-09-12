@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { site } from '../data/site';
+import { site, services } from '../data/site';
 
 interface Props {
   title?: string;
@@ -18,12 +18,26 @@ const jsonLd = {
   description: site.description,
   url: site.url,
   email: site.email,
+  logo: `${site.url}/logo.svg`,
+  image: `${site.url}/og.png`,
   areaServed: site.region,
   founder: site.owner,
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'ON',
     addressCountry: 'CA',
+  },
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: `${site.name} services`,
+    itemListElement: services.map((service) => ({
+      '@type': 'Offer',
+      itemOffered: {
+        '@type': 'Service',
+        name: service.title,
+        description: service.description,
+      },
+    })),
   },
 };
 ---
@@ -53,6 +67,7 @@ const jsonLd = {
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={`${site.name} — ${site.tagline}`} />
+    <meta property="og:locale" content="en_CA" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={`${site.url}/og.png`} />
 

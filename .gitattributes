@@ -6,6 +6,7 @@ pnpm-lock.yaml text eol=lf
 
 # Treat these as binary (no line-ending conversion, no diffs)
 *.png binary
+*.webp binary
 *.jpg binary
 *.jpeg binary
 *.gif binary

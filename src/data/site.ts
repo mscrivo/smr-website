@@ -6,7 +6,7 @@
 export const site = {
   name: 'SMR Computer Services',
   shortName: 'SMR',
-  tagline: 'Technology solutions for homes & small businesses',
+  tagline: 'PC builds, UniFi networks & tech help in Halton & Peel',
   description:
     'SMR Computer Services provides custom PC builds, network installations, surveillance setup, remote support, and custom software for clients across the Halton and Peel region.',
   region: 'Halton & Peel Region (Oakville, Mississauga, Burlington, Georgetown)',

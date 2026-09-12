@@ -1,0 +1,24 @@
+#!/usr/bin/env sh
+# Same Git Bash PATH fix as pre-commit: astro check spawns node, which the
+# .CMD shim cannot find on a POSIX-style PATH. No-op on Linux/macOS.
+if command -v cygpath >/dev/null 2>&1; then
+  pnpm_bin=$(command -v pnpm) || exit 1
+
+  win_path=""
+  rest=$PATH
+  while [ -n "$rest" ]; do
+    entry=${rest%%:*}
+    case $rest in
+      *:*) rest=${rest#*:} ;;
+      *) rest="" ;;
+    esac
+    [ -z "$entry" ] && continue
+    w=$(cygpath -w "$entry" 2>/dev/null) || continue
+    if [ -z "$win_path" ]; then win_path=$w; else win_path="$win_path;$w"; fi
+  done
+
+  export PATH="$(cygpath -w node_modules/.bin);$win_path"
+  exec "$pnpm_bin" exec astro check
+fi
+
+pnpm exec astro check

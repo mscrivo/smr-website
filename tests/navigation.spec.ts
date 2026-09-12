@@ -5,11 +5,11 @@ test('desktop shows the primary nav links', async ({ page }, testInfo) => {
 
   await page.goto('/');
   const nav = page.getByRole('navigation', { name: 'Primary' });
-  for (const label of ['Services', 'About', 'Contact']) {
+  for (const label of ['Services', 'Networks', 'About']) {
     await expect(nav.getByRole('link', { name: label, exact: true })).toBeVisible();
   }
-  // Anchor nav scrolls to the contact section.
-  await nav.getByRole('link', { name: 'Contact', exact: true }).click();
+  // The "Get in touch" call to action anchors to the contact section.
+  await page.getByRole('link', { name: 'Get in touch' }).click();
   await expect(page).toHaveURL(/#contact$/);
 });
 
@@ -22,7 +22,7 @@ test('mobile keeps the nav links reachable and the email CTA visible', async ({
   const nav = page.getByRole('navigation', { name: 'Primary' });
 
   // The links wrap to a second row but stay visible and reachable on small screens.
-  for (const label of ['Services', 'About', 'Contact']) {
+  for (const label of ['Services', 'Networks', 'About']) {
     await expect(nav.getByRole('link', { name: label, exact: true })).toBeVisible();
   }
 
