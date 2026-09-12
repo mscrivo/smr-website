@@ -1,0 +1,106 @@
+---
+// Ubiquiti UniFi showcase — screenshots of real managed installs.
+---
+
+<section class="section networks" id="networks">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Whole Home & Office Networking</span>
+      <h2 class="section-title">Ubiquiti UniFi, installed &amp; managed end to end</h2>
+      <p class="section-lead">
+        I design, install, and manage Ubiquiti UniFi networks -- from the gateway at your point of
+        entry, to every access point on the premises. One controller for all of it: Wi-Fi, wired
+        backbone, cameras, and doorbells.
+      </p>
+    </div>
+
+    <figure class="shot">
+      <img
+        src="/images/ubiquiti-site-manager.png"
+        width="2101"
+        height="563"
+        loading="lazy"
+        alt="Ubiquiti Site Manager dashboard showing several managed network sites with live status and uptime graphs"
+      />
+      <figcaption>
+        Every site I look after on one dashboard — gateways, switches, access points, and cameras,
+        with live status and uptime at a glance.
+      </figcaption>
+    </figure>
+
+    <figure class="shot">
+      <img
+        src="/images/unifi-controller.png"
+        width="2843"
+        height="636"
+        loading="lazy"
+        alt="UniFi controller device list showing a gateway, PoE switch, meshed access points, and cameras all online"
+      />
+      <figcaption>
+        A typical install: wired backbone with PoE switching, meshed Wi-Fi in every room, and
+        doorbell and outdoor cameras — all on a single controller.
+      </figcaption>
+    </figure>
+
+    <ul class="includes">
+      <li>Coverage planning &amp; professional placement</li>
+      <li>Wired backbone &amp; PoE switching</li>
+      <li>Meshed Wi-Fi across the whole space</li>
+      <li>Ongoing monitoring, updates &amp; management</li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .section-head {
+    margin-bottom: 2.5rem;
+  }
+
+  .shot {
+    margin: 0 0 2rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+
+  .shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .shot figcaption {
+    padding: 1rem 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .includes {
+    list-style: none;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .includes li {
+    position: relative;
+    padding: 0.85rem 1rem 0.85rem 2.1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .includes li::before {
+    content: '›';
+    position: absolute;
+    left: 1rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+  }
+</style>

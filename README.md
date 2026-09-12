@@ -1,7 +1,7 @@
 # SMR Computer Services — Website
 
-Marketing site for **SMR Computer Services**, a sole-proprietor IT consultancy serving the Greater
-Toronto Area. Built as a static site with [Astro](https://astro.build/) and TypeScript.
+Marketing site for **SMR Computer Services**, a sole-proprietor IT consultancy serving the Halton
+and Peel region. Built as a static site with [Astro](https://astro.build/) and TypeScript.
 
 Live at **[smrcomputers.ca](https://smrcomputers.ca)**.
 

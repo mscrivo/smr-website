@@ -8,8 +8,8 @@ export const site = {
   shortName: 'SMR',
   tagline: 'Technology solutions for homes & small businesses',
   description:
-    'SMR Computer Services provides custom PC builds, network installations, surveillance setup, remote support, and custom software for clients across the Greater Toronto Area.',
-  region: 'Greater Toronto Area',
+    'SMR Computer Services provides custom PC builds, network installations, surveillance setup, remote support, and custom software for clients across the Halton and Peel region.',
+  region: 'Halton & Peel Region (Oakville, Mississauga, Burlington, Georgetown)',
   url: 'https://smrcomputers.ca',
   email: 'info@smrcomputers.ca',
   owner: 'Michael Scrivo',
@@ -32,7 +32,7 @@ export const services: Service[] = [
   {
     title: 'Network Installations & Upgrades',
     description:
-      'Reliable wired and wireless networks: routers, switches, access points, and cabling designed for solid coverage and speed throughout your space.',
+      'Reliable wired and wireless networks built on Ubiquiti UniFi — gateways, PoE switches, access points, and cabling designed for solid coverage and speed throughout your space.',
     icon: 'M5 12a7 7 0 0 1 14 0 M8 14.5a4 4 0 0 1 8 0 M12 18h.01',
   },
   {
