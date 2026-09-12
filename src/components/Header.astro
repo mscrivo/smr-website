@@ -20,17 +20,17 @@ const navLinks = [
 
     <nav class="nav" aria-label="Primary">
       <ul class="nav-links">
-        {
-          navLinks.map((link) => (
-            <li>
-              <a href={link.href}>{link.label}</a>
-            </li>
-          ))
-        }
+        {navLinks.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
       </ul>
     </nav>
 
-    <a class="btn btn-primary nav-cta" href={`mailto:${site.email}`}>Get in touch</a>
+    <a class="btn btn-primary nav-cta" href={`mailto:${site.email}`}>
+      Get in touch
+    </a>
   </div>
 </header>
 

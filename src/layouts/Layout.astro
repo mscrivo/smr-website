@@ -64,7 +64,7 @@ const jsonLd = {
       rel="stylesheet"
     />
 
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
   </head>
   <body>
     <slot />
@@ -74,6 +74,7 @@ const jsonLd = {
       is:inline
       data-goatcounter="https://smr.goatcounter.com/count"
       async
-      src="//gc.zgo.at/count.js"></script>
+      src="//gc.zgo.at/count.js"
+    ></script>
   </body>
 </html>
