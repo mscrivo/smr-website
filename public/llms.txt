@@ -1,0 +1,33 @@
+# SMR Computer Services
+
+> PC builds, UniFi networks & tech help in Halton & Peel. A local IT consultancy providing custom desktops, Ubiquiti UniFi network installs, surveillance, remote support, website creation, and custom small business software for homes and small businesses across the Halton and Peel region (Oakville, Mississauga, Burlington, Georgetown).
+
+## Pages
+
+- [Home](https://smrcomputers.ca/): Landing page with an overview of services, networking work, about, and contact.
+- [Services](https://smrcomputers.ca/#services): The six core services offered, from hardware on your desk to the network in your walls.
+- [Networks](https://smrcomputers.ca/#networks): Ubiquiti UniFi whole-home and office networking — design, installation, and ongoing management.
+- [About](https://smrcomputers.ca/#about): About the owner, Michael Scrivo, and the local one-on-one service model.
+- [Contact](https://smrcomputers.ca/#contact): How to get in touch to start a project.
+
+## Services
+
+- [Custom PC Builds](https://smrcomputers.ca/#services): Purpose-built desktops spec'd to your workload and budget — from quiet home offices to high-performance workstations — assembled, tested, and tuned.
+- [Network Installations & Upgrades](https://smrcomputers.ca/#services): Reliable wired and wireless networks built on Ubiquiti UniFi — gateways, PoE switches, access points, and cabling designed for solid coverage and speed.
+- [Home & Business Surveillance](https://smrcomputers.ca/#services): IP camera systems with remote viewing and recording, professionally placed and configured.
+- [Remote Support](https://smrcomputers.ca/#services): Fast, secure remote help for everyday computer problems — troubleshooting, cleanup, software fixes, and tune-ups.
+- [Website Creation & Maintenance](https://smrcomputers.ca/#services): Fast, modern websites built and maintained for small businesses, from a simple online presence to ongoing updates and hosting support.
+- [Custom Small Business Software](https://smrcomputers.ca/#services): Tailored tools and integrations that automate the busywork — software shaped around how your business actually runs.
+
+## Networking (Ubiquiti UniFi)
+
+- [Coverage planning & professional placement](https://smrcomputers.ca/#networks): Site surveys and access point placement for full coverage.
+- [Wired backbone & PoE switching](https://smrcomputers.ca/#networks): Structured cabling and power-over-Ethernet switching as the network core.
+- [Meshed Wi-Fi across the whole space](https://smrcomputers.ca/#networks): Seamless wireless coverage throughout home or office.
+- [Ongoing monitoring, updates & management](https://smrcomputers.ca/#networks): One controller for gateways, switches, access points, cameras, and doorbells.
+
+## Contact
+
+- Email: info@smrcomputers.ca
+- Region served: Halton & Peel Region (Oakville, Mississauga, Burlington, Georgetown)
+- Owner: Michael Scrivo
