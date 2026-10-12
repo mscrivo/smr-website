@@ -186,7 +186,7 @@ importers:
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
       eslint:
-        specifier: ^10.11.0
+        specifier: ^10.12.0
         version: 10.12.0
       eslint-plugin-astro:
         specifier: ^3.2.1
