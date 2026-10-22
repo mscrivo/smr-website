@@ -1,5 +1,11 @@
 ---
 // Ubiquiti UniFi showcase — screenshots of real managed installs.
+interface Props {
+  /** Link through to the dedicated UniFi page (off on that page itself). */
+  showPageLink?: boolean;
+}
+
+const { showPageLink = false } = Astro.props;
 ---
 
 <section class="section networks" id="networks">
@@ -48,6 +54,12 @@
       <li>Meshed Wi-Fi across the whole space</li>
       <li>Ongoing monitoring, updates &amp; management</li>
     </ul>
+
+    {showPageLink && (
+      <a class="btn btn-ghost more" href="/unifi-network-installation">
+        More about UniFi network installs
+      </a>
+    )}
   </div>
 </section>
 
@@ -102,5 +114,9 @@
     left: 1rem;
     color: var(--accent);
     font-family: var(--font-mono);
+  }
+
+  .more {
+    margin-top: 2rem;
   }
 </style>

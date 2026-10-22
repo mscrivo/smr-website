@@ -20,7 +20,7 @@ const jsonLd = {
   email: site.email,
   logo: `${site.url}/logo.svg`,
   image: `${site.url}/og.png`,
-  areaServed: site.region,
+  areaServed: site.cities.map((city) => ({ '@type': 'City', name: `${city}, ON` })),
   founder: site.owner,
   address: {
     '@type': 'PostalAddress',
