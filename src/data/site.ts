@@ -10,6 +10,7 @@ export const site = {
   description:
     'SMR Computer Services provides custom PC builds, network installations, surveillance setup, remote support, and custom software for clients across the Halton and Peel region.',
   region: 'Halton & Peel Region (Oakville, Mississauga, Burlington, Georgetown)',
+  cities: ['Oakville', 'Mississauga', 'Burlington', 'Georgetown'],
   url: 'https://smrcomputers.ca',
   email: 'info@smrcomputers.ca',
   owner: 'Michael Scrivo',

@@ -45,7 +45,8 @@ src/
   components/        UI sections (Header, Hero, Services, About, Contact, Footer)
   data/site.ts       business info + services (single source of truth)
   layouts/Layout.astro   base HTML shell, meta tags, fonts, structured data
-  pages/index.astro  the single-page site
+  pages/index.astro  the home page
+  pages/unifi-network-installation.astro   dedicated UniFi service page
   styles/global.css  design tokens & base styles
 ```
 

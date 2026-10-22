@@ -6,7 +6,7 @@ test.describe('home page smoke tests', () => {
     await page.goto('/');
 
     await expect(page).toHaveTitle(/SMR Computer Services/);
-    await expect(page.getByRole('heading', { level: 1 })).toContainText('Reliable tech help');
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Computer & network help');
 
     // Logo loads in the header.
     await expect(page.locator('.brand img')).toBeVisible();
@@ -22,6 +22,16 @@ test.describe('home page smoke tests', () => {
     ]) {
       await expect(page.getByRole('heading', { name: title })).toBeVisible();
     }
+  });
+
+  test('links through to the UniFi service page', async ({ page }) => {
+    await page.goto('/');
+
+    await page.getByRole('link', { name: 'More about UniFi network installs' }).click();
+    await expect(page).toHaveURL(/\/unifi-network-installation$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText(
+      'UniFi network installation'
+    );
   });
 
   test('shows the contact section with the email call to action', async ({ page }) => {

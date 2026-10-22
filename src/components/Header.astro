@@ -2,15 +2,15 @@
 import { site } from '../data/site';
 
 const navLinks = [
-  { href: '#services', label: 'Services' },
-  { href: '#networks', label: 'Networks' },
-  { href: '#about', label: 'About' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#networks', label: 'Networks' },
+  { href: '/#about', label: 'About' },
 ];
 ---
 
 <header class="header">
   <div class="container header-inner">
-    <a class="brand" href="#top" aria-label={`${site.name} home`}>
+    <a class="brand" href="/#top" aria-label={`${site.name} home`}>
       <img class="brand-mark" src="/logo.svg" width="40" height="40" alt="" />
       <span class="brand-text">
         <span class="brand-name">{site.shortName}</span>
@@ -28,7 +28,7 @@ const navLinks = [
       </ul>
     </nav>
 
-    <a class="btn btn-primary nav-cta" href="#contact">
+    <a class="btn btn-primary nav-cta" href="/#contact">
       Get in touch
     </a>
   </div>
