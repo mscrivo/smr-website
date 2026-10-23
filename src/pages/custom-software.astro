@@ -1,0 +1,76 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import Projects from '../components/Projects.astro';
+import { site, type Project } from '../data/site';
+
+const cities = site.cities.join(', ');
+
+const projects: Project[] = [
+  {
+    name: 'Outlook on the Desktop',
+    url: 'https://outlookonthedesktop.com',
+    image: '/images/outlook-on-the-desktop.webp',
+    summary:
+      'A free, open-source Windows app that pins Outlook calendars, inboxes, tasks, and notes directly to the desktop. It ships as a code-signed installer with built-in, signature-verified updates.',
+    alt: 'Outlook on the Desktop website showing the app’s calendar view pinned to a Windows desktop wallpaper',
+  },
+];
+
+const steps = [
+  {
+    title: 'Map how you work',
+    text: 'Walk me through the repetitive parts of your day: the spreadsheets, copy-and-paste, and double entry that eat your time.',
+  },
+  {
+    title: 'Plan the first version',
+    text: 'We agree on what the tool should do first, so you get something useful quickly instead of a big project that drags on.',
+  },
+  {
+    title: 'Build & test',
+    text: 'Built to fit the way your business runs, then tested against your real workflow before you rely on it.',
+  },
+  {
+    title: 'Support & updates',
+    text: 'Fixes, improvements, and updates as your business changes, from the person who built it.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Which areas do you serve?',
+    a: `Small businesses across Halton and Peel, including ${cities}.`,
+  },
+  {
+    q: 'What kind of software can you build?',
+    a: 'Tools that automate the busywork: connecting the apps you already use, replacing manual spreadsheets, and small custom apps for jobs off-the-shelf software doesn’t handle well.',
+  },
+  {
+    q: 'Do I need to know exactly what I want?',
+    a: 'No. Describe the problem and how you handle it today, and I’ll suggest what’s worth automating and explain the options in plain language.',
+  },
+  {
+    q: 'What happens after it’s built?',
+    a: 'I stay on to fix issues, make improvements, and keep it up to date as your needs change.',
+  },
+];
+---
+
+<ServicePage
+  title={`Custom Small Business Software in ${cities}`}
+  description={`Custom software, tools, and integrations for small businesses in ${cities} and across Halton & Peel, shaped around how your business actually runs.`}
+  eyebrow="Custom software · Halton & Peel"
+  heading={`Custom software for small businesses in ${cities}`}
+  lead={`Tailored tools and integrations that automate the busywork, shaped around how your business actually runs. Built and supported by ${site.owner} of ${site.name}.`}
+  cta="Talk about your idea"
+  stepsTitle="From busywork to a tool that handles it"
+  steps={steps}
+  faqs={faqs}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Software I’ve built</span>
+      <h2 class="section-title">Built, shipped &amp; maintained</h2>
+      <Projects projects={projects} />
+    </div>
+  </section>
+</ServicePage>

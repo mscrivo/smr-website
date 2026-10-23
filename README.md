@@ -49,6 +49,7 @@ src/
   pages/unifi-network-installation.astro   dedicated UniFi service page
   pages/custom-pc-builds.astro             dedicated PC builds service page
   pages/website-design.astro               websites service page + client work
+  pages/custom-software.astro              software service page + Outlook on the Desktop
   layouts/ServicePage.astro                shared shell for service pages
   styles/global.css  design tokens & base styles
 ```

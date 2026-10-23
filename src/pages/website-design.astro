@@ -1,10 +1,11 @@
 ---
 import ServicePage from '../layouts/ServicePage.astro';
-import { site } from '../data/site';
+import Projects from '../components/Projects.astro';
+import { site, type Project } from '../data/site';
 
 const cities = site.cities.join(', ');
 
-const projects = [
+const projects: Project[] = [
   {
     name: 'Firenze Shoes',
     url: 'https://firenzeshoes.ca',
@@ -76,65 +77,7 @@ const faqs = [
     <div class="container">
       <span class="eyebrow">Client work</span>
       <h2 class="section-title">Sites I’ve built &amp; maintain</h2>
-      <div class="projects">
-        {projects.map((project) => (
-          <article class="project">
-            <a href={project.url}>
-              <img src={project.image} width="1440" height="900" loading="lazy" alt={project.alt} />
-            </a>
-            <div class="project-body">
-              <h3>{project.name}</h3>
-              <p>{project.summary}</p>
-              <a class="project-link" href={project.url}>
-                Visit {project.url.replace('https://', '')} →
-              </a>
-            </div>
-          </article>
-        ))}
-      </div>
+      <Projects projects={projects} />
     </div>
   </section>
 </ServicePage>
-
-<style>
-  .projects {
-    margin-top: 2.5rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .project {
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    background: var(--surface);
-  }
-
-  .project img {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .project-body {
-    padding: 1.25rem 1.4rem 1.5rem;
-  }
-
-  .project h3 {
-    font-size: 1.18rem;
-  }
-
-  .project p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-top: 0.5rem;
-  }
-
-  .project-link {
-    display: inline-block;
-    margin-top: 0.9rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
-</style>

@@ -25,6 +25,15 @@ export interface Service {
   href?: string;
 }
 
+export interface Project {
+  name: string;
+  url: string;
+  /** 1440x900 screenshot in /public/images. */
+  image: string;
+  summary: string;
+  alt: string;
+}
+
 export const services: Service[] = [
   {
     title: 'Custom PC Builds',
@@ -64,5 +73,6 @@ export const services: Service[] = [
     description:
       'Tailored tools and integrations that automate the busywork — software shaped around how your business actually runs.',
     icon: 'M8 6l-4 6 4 6 M16 6l4 6-4 6 M13 4l-2 16',
+    href: '/custom-software',
   },
 ];

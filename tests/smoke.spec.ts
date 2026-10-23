@@ -55,6 +55,16 @@ test.describe('home page smoke tests', () => {
     }
   });
 
+  test('service card links through to the custom software page', async ({ page }) => {
+    await page.goto('/');
+
+    await page
+      .getByRole('link', { name: 'Learn more about Custom Small Business Software' })
+      .click();
+    await expect(page).toHaveURL(/\/custom-software$/);
+    await expect(page.getByRole('heading', { name: 'Outlook on the Desktop' })).toBeVisible();
+  });
+
   test('shows the contact section with the email call to action', async ({ page }) => {
     await page.goto('/');
 
