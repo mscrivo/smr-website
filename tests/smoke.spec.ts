@@ -42,6 +42,19 @@ test.describe('home page smoke tests', () => {
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Custom PC builds');
   });
 
+  test('service card links through to the websites page with client work', async ({ page }) => {
+    await page.goto('/');
+
+    await page
+      .getByRole('link', { name: 'Learn more about Website Creation & Maintenance' })
+      .click();
+    await expect(page).toHaveURL(/\/website-design$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Small business websites');
+    for (const client of ['Firenze Shoes', 'Whimsy Street Treats']) {
+      await expect(page.getByRole('heading', { name: client })).toBeVisible();
+    }
+  });
+
   test('shows the contact section with the email call to action', async ({ page }) => {
     await page.goto('/');
 

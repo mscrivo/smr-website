@@ -57,6 +57,7 @@ export const services: Service[] = [
     description:
       'Fast, modern websites built and maintained for small businesses — from a simple online presence to ongoing updates and hosting support.',
     icon: 'M3 5h18v14H3z M3 9h18 M7 7h.01 M10 7h.01 M7 13l3 2-3 2 M14 17h4',
+    href: '/website-design',
   },
   {
     title: 'Custom Small Business Software',

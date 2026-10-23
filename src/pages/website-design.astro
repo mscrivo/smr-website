@@ -1,0 +1,140 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import { site } from '../data/site';
+
+const cities = site.cities.join(', ');
+
+const projects = [
+  {
+    name: 'Firenze Shoes',
+    url: 'https://firenzeshoes.ca',
+    image: '/images/client-firenze-shoes.webp',
+    summary:
+      'Online store for a designer shoe boutique on Lakeshore Road in Oakville: women’s and men’s footwear and accessories, browsable by type, with online checkout.',
+    alt: 'Firenze Shoes website showing the women’s collection page with a product grid of designer heels and handbags',
+  },
+  {
+    name: 'Whimsy Street Treats',
+    url: 'https://whimsystreettreats.ca',
+    image: '/images/client-whimsy-street-treats.webp',
+    summary: 'Site structure and hosting for an ice cream shop in Georgetown.',
+    alt: 'Whimsy Street Treats home page with a pastel banner of sprinkle-filled waffle cones and the Whimsy logo',
+  },
+];
+
+const steps = [
+  {
+    title: 'Talk through your business',
+    text: 'Who your customers are and what you want them to be able to do: find you, see your menu or products, book, or buy online.',
+  },
+  {
+    title: 'Design & build',
+    text: 'A clean, fast site that looks right on phones and desktops, built around your brand and the pages your customers actually need.',
+  },
+  {
+    title: 'Launch',
+    text: 'Domain, hosting, and launch handled for you, so the site goes live without you having to touch the technical side.',
+  },
+  {
+    title: 'Ongoing maintenance',
+    text: 'Updates, content changes, and hosting support afterwards, so the site stays current and keeps working.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Which areas do you serve?',
+    a: `Small businesses across Halton and Peel, including ${cities}.`,
+  },
+  {
+    q: 'Can my website sell online or take orders?',
+    a: 'Yes. Firenze Shoes sells online with full checkout, and Whimsy Street Treats takes orders and sells e-gift cards through its site.',
+  },
+  {
+    q: 'What does ongoing maintenance include?',
+    a: 'Keeping the site updated, making content changes when your business changes, and looking after hosting, so you can focus on running the business.',
+  },
+  {
+    q: 'Do I need to have everything figured out first?',
+    a: 'No. Tell me about your business and what you want customers to be able to do, and I’ll recommend what the site needs and explain it in plain language.',
+  },
+];
+---
+
+<ServicePage
+  title={`Small Business Website Design in ${cities}`}
+  description={`Website design, hosting, and maintenance for small businesses in ${cities} and across Halton & Peel, from a simple online presence to online stores and ordering.`}
+  eyebrow="Websites · Halton & Peel"
+  heading={`Small business websites in ${cities}`}
+  lead={`Fast, modern websites for local businesses, built and maintained by ${site.owner} of ${site.name}. From a simple online presence to online stores and ordering.`}
+  cta="Start your website"
+  stepsTitle="From first conversation to a site that keeps working"
+  steps={steps}
+  faqs={faqs}
+>
+  <section class="section">
+    <div class="container">
+      <span class="eyebrow">Client work</span>
+      <h2 class="section-title">Sites I’ve built &amp; maintain</h2>
+      <div class="projects">
+        {projects.map((project) => (
+          <article class="project">
+            <a href={project.url}>
+              <img src={project.image} width="1440" height="900" loading="lazy" alt={project.alt} />
+            </a>
+            <div class="project-body">
+              <h3>{project.name}</h3>
+              <p>{project.summary}</p>
+              <a class="project-link" href={project.url}>
+                Visit {project.url.replace('https://', '')} →
+              </a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</ServicePage>
+
+<style>
+  .projects {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .project {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--surface);
+  }
+
+  .project img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .project-body {
+    padding: 1.25rem 1.4rem 1.5rem;
+  }
+
+  .project h3 {
+    font-size: 1.18rem;
+  }
+
+  .project p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.5rem;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+</style>

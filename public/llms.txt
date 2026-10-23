@@ -9,6 +9,7 @@
 - [Networks](https://smrcomputers.ca/#networks): Ubiquiti UniFi whole-home and office networking — design, installation, and ongoing management.
 - [UniFi Network Installation](https://smrcomputers.ca/unifi-network-installation): Dedicated page on UniFi installs in Oakville, Mississauga, Burlington, and Georgetown — process, what's included, and FAQ.
 - [Custom PC Builds](https://smrcomputers.ca/custom-pc-builds): Dedicated page on custom desktop builds in Oakville, Mississauga, Burlington, and Georgetown — how a build works, example builds, and FAQ.
+- [Small Business Websites](https://smrcomputers.ca/website-design): Website design, hosting, and maintenance for local businesses, with client work (Firenze Shoes, Whimsy Street Treats) and FAQ.
 - [About](https://smrcomputers.ca/#about): About the owner, Michael Scrivo, and the local one-on-one service model.
 - [Contact](https://smrcomputers.ca/#contact): How to get in touch to start a project.
 
