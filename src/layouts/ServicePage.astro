@@ -1,0 +1,145 @@
+---
+// Shared shell for dedicated service pages: intro, page-specific content
+// (default slot), how-it-works steps, FAQ, and the contact call to action.
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  eyebrow: string;
+  heading: string;
+  lead: string;
+  cta: string;
+  stepsTitle: string;
+  steps: { title: string; text: string }[];
+  faqs: { q: string; a: string }[];
+}
+
+const { title, description, eyebrow, heading, lead, cta, stepsTitle, steps, faqs } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main>
+    <section class="section intro">
+      <div class="container">
+        <span class="eyebrow">{eyebrow}</span>
+        <h1 class="page-title">{heading}</h1>
+        <p class="section-lead">{lead}</p>
+        <a class="btn btn-primary cta" href="#contact">
+          {cta}
+        </a>
+      </div>
+    </section>
+
+    <slot />
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">How it works</span>
+        <h2 class="section-title">{stepsTitle}</h2>
+        <ol class="steps">
+          {steps.map((step) => (
+            <li>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">FAQ</span>
+        <h2 class="section-title">Common questions</h2>
+        <div class="faqs">
+          {faqs.map((faq) => (
+            <details>
+              <summary>{faq.q}</summary>
+              <p>{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .intro {
+    padding-bottom: 0;
+  }
+
+  .page-title {
+    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
+    margin-top: 1rem;
+    max-width: 22ch;
+  }
+
+  .cta {
+    margin-top: 2rem;
+  }
+
+  .steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 2.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .steps li {
+    counter-increment: step;
+    padding: 1.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .steps li::before {
+    content: '0' counter(step);
+    font-family: var(--font-mono);
+    color: var(--accent);
+    font-size: 0.85rem;
+  }
+
+  .steps h3 {
+    font-size: 1.12rem;
+    margin-top: 0.5rem;
+  }
+
+  .steps p,
+  .faqs p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-top: 0.6rem;
+  }
+
+  .faqs {
+    margin-top: 2rem;
+    display: grid;
+    gap: 0.75rem;
+    max-width: 72ch;
+  }
+
+  .faqs details {
+    padding: 1rem 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--surface);
+  }
+
+  .faqs summary {
+    cursor: pointer;
+    font-weight: 600;
+  }
+</style>

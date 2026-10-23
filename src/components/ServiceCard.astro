@@ -3,7 +3,7 @@ import type { Service } from '../data/site';
 
 type Props = Service;
 
-const { title, description, icon } = Astro.props;
+const { title, description, icon, href } = Astro.props;
 ---
 
 <article class="card">
@@ -23,6 +23,11 @@ const { title, description, icon } = Astro.props;
   </div>
   <h3 class="card-title">{title}</h3>
   <p class="card-desc">{description}</p>
+  {href && (
+    <a class="card-link" href={href}>
+      Learn more<span class="visually-hidden"> about {title}</span> →
+    </a>
+  )}
 </article>
 
 <style>
@@ -80,5 +85,22 @@ const { title, description, icon } = Astro.props;
     color: var(--text-muted);
     font-size: 0.97rem;
     margin-top: 0.6rem;
+  }
+
+  .card-link {
+    position: relative;
+    display: inline-block;
+    margin-top: 0.9rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
   }
 </style>
