@@ -21,6 +21,8 @@ export interface Service {
   description: string;
   /** Inline SVG path data drawn on a 24x24 grid (stroke-based icon). */
   icon: string;
+  /** Dedicated service page, if there is one. */
+  href?: string;
 }
 
 export const services: Service[] = [
@@ -29,12 +31,14 @@ export const services: Service[] = [
     description:
       'Purpose-built desktops spec’d to your workload and budget — from quiet home offices to high-performance workstations — assembled, tested, and tuned.',
     icon: 'M4 5h16v11H4z M9 20h6 M12 16v4 M8 9h.01 M11 9h.01',
+    href: '/custom-pc-builds',
   },
   {
     title: 'Network Installations & Upgrades',
     description:
       'Reliable wired and wireless networks built on Ubiquiti UniFi — gateways, PoE switches, access points, and cabling designed for solid coverage and speed throughout your space.',
     icon: 'M5 12a7 7 0 0 1 14 0 M8 14.5a4 4 0 0 1 8 0 M12 18h.01',
+    href: '/unifi-network-installation',
   },
   {
     title: 'Home & Business Surveillance',

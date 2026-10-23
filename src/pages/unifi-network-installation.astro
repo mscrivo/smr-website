@@ -1,9 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
+import ServicePage from '../layouts/ServicePage.astro';
 import Networks from '../components/Networks.astro';
-import Contact from '../components/Contact.astro';
-import Footer from '../components/Footer.astro';
 import { site } from '../data/site';
 
 const cities = site.cities.join(', ');
@@ -47,131 +44,16 @@ const faqs = [
 ];
 ---
 
-<Layout
+<ServicePage
   title={`UniFi Network Installation in ${cities}`}
   description={`Ubiquiti UniFi network design, installation, and management for homes and small businesses in ${cities} and across Halton & Peel — whole-home Wi-Fi, PoE switching, cameras, and doorbells.`}
+  eyebrow="Ubiquiti UniFi · Halton & Peel"
+  heading={`UniFi network installation in ${cities}`}
+  lead={`Wi-Fi that reaches every room, a wired backbone that doesn’t drop out, and one controller for your whole network — designed, installed, and managed by ${site.owner} of ${site.name}.`}
+  cta="Plan your network"
+  stepsTitle="From walkthrough to a network you don’t think about"
+  steps={steps}
+  faqs={faqs}
 >
-  <Header />
-  <main>
-    <section class="section intro">
-      <div class="container">
-        <span class="eyebrow">Ubiquiti UniFi · Halton &amp; Peel</span>
-        <h1 class="page-title">UniFi network installation in {cities}</h1>
-        <p class="section-lead">
-          Wi-Fi that reaches every room, a wired backbone that doesn’t drop out, and one controller
-          for your whole network — designed, installed, and managed by {site.owner} of {site.name}.
-        </p>
-        <a class="btn btn-primary cta" href="#contact">
-          Plan your network
-        </a>
-      </div>
-    </section>
-
-    <Networks />
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">How it works</span>
-        <h2 class="section-title">From walkthrough to a network you don’t think about</h2>
-        <ol class="steps">
-          {steps.map((step) => (
-            <li>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <span class="eyebrow">FAQ</span>
-        <h2 class="section-title">Common questions</h2>
-        <div class="faqs">
-          {faqs.map((faq) => (
-            <details>
-              <summary>{faq.q}</summary>
-              <p>{faq.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <Contact />
-  </main>
-  <Footer />
-</Layout>
-
-<style>
-  .intro {
-    padding-bottom: 0;
-  }
-
-  .page-title {
-    font-size: clamp(2.1rem, 5.5vw, 3.4rem);
-    margin-top: 1rem;
-    max-width: 22ch;
-  }
-
-  .cta {
-    margin-top: 2rem;
-  }
-
-  .steps {
-    list-style: none;
-    counter-reset: step;
-    margin: 2.5rem 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .steps li {
-    counter-increment: step;
-    padding: 1.5rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    background: var(--surface);
-  }
-
-  .steps li::before {
-    content: '0' counter(step);
-    font-family: var(--font-mono);
-    color: var(--accent);
-    font-size: 0.85rem;
-  }
-
-  .steps h3 {
-    font-size: 1.12rem;
-    margin-top: 0.5rem;
-  }
-
-  .steps p,
-  .faqs p {
-    color: var(--text-muted);
-    font-size: 0.95rem;
-    margin-top: 0.6rem;
-  }
-
-  .faqs {
-    margin-top: 2rem;
-    display: grid;
-    gap: 0.75rem;
-    max-width: 72ch;
-  }
-
-  .faqs details {
-    padding: 1rem 1.25rem;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    background: var(--surface);
-  }
-
-  .faqs summary {
-    cursor: pointer;
-    font-weight: 600;
-  }
-</style>
+  <Networks />
+</ServicePage>

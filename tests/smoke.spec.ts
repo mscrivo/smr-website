@@ -34,6 +34,14 @@ test.describe('home page smoke tests', () => {
     );
   });
 
+  test('service card links through to the custom PC builds page', async ({ page }) => {
+    await page.goto('/');
+
+    await page.getByRole('link', { name: 'Learn more about Custom PC Builds' }).click();
+    await expect(page).toHaveURL(/\/custom-pc-builds$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText('Custom PC builds');
+  });
+
   test('shows the contact section with the email call to action', async ({ page }) => {
     await page.goto('/');
 

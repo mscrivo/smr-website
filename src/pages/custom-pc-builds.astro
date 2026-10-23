@@ -1,0 +1,114 @@
+---
+import ServicePage from '../layouts/ServicePage.astro';
+import { site } from '../data/site';
+
+const cities = site.cities.join(', ');
+
+const steps = [
+  {
+    title: 'Talk through what you need',
+    text: 'What you’ll use it for, what’s slowing you down today, how quiet it needs to be, and what you want to spend. No jargon required.',
+  },
+  {
+    title: 'Spec the parts',
+    text: 'I put together a parts list matched to your workload and budget, and explain where the money goes and why, so you’re not paying for performance you won’t use.',
+  },
+  {
+    title: 'Assemble & cable-manage',
+    text: 'Built by hand with tidy cable routing and sensible airflow, so it runs cool and quiet and is easy to upgrade later.',
+  },
+  {
+    title: 'Test & tune',
+    text: 'Firmware and drivers updated, then stress-tested and tuned before it’s handed over, so problems show up on my bench instead of your desk.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Which areas do you serve?',
+    a: `Homes and small businesses across Halton and Peel, including ${cities}.`,
+  },
+  {
+    q: 'Do I need to know anything about computer parts?',
+    a: 'No. Tell me what you do on your computer and what frustrates you about your current one, and I’ll handle the spec and explain the choices in plain language.',
+  },
+  {
+    q: 'Is a custom build only for gaming?',
+    a: 'Not at all. Custom builds suit quiet home offices, photo and video editing, development and engineering workstations, and gaming alike: anywhere an off-the-shelf PC is too loud, too slow, or full of parts you don’t need.',
+  },
+  {
+    q: 'Why build instead of buying a prebuilt?',
+    a: 'You get exactly the parts your work needs, quality components where they matter, no bloatware, and a machine that’s easy to upgrade instead of replace.',
+  },
+];
+---
+
+<ServicePage
+  title={`Custom PC Builds in ${cities}`}
+  description={`Custom desktop PCs spec’d, built, and tested for your workload and budget — quiet home office machines, workstations, and high-performance gaming PCs in ${cities} and across Halton & Peel.`}
+  eyebrow="Custom PC builds · Halton & Peel"
+  heading={`Custom PC builds in ${cities}`}
+  lead={`A desktop spec’d to how you actually work, from a quiet home office machine to a high-performance workstation. Assembled, tested, and tuned by ${site.owner} of ${site.name}.`}
+  cta="Plan your build"
+  stepsTitle="From parts list to a machine that just works"
+  steps={steps}
+  faqs={faqs}
+>
+  <section class="section">
+    <div class="container">
+      <div class="shots">
+        <figure class="shot">
+          <img
+            src="/images/custom-pc-build-interior.webp"
+            width="1600"
+            height="1205"
+            loading="lazy"
+            alt="Inside a custom-built PC: GeForce RTX graphics card, large tower air cooler, and RGB memory with neatly routed cables"
+          />
+          <figcaption>
+            High-performance build with a large air cooler and tidy cable routing for cool, quiet
+            running.
+          </figcaption>
+        </figure>
+        <figure class="shot">
+          <img
+            src="/images/custom-pc-workstation-desk.webp"
+            width="1600"
+            height="1200"
+            loading="lazy"
+            alt="Finished dual-monitor workstation with one landscape and one portrait display, mechanical keyboard, and desk speakers"
+          />
+          <figcaption>A finished dual-monitor workstation, ready for work.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</ServicePage>
+
+<style>
+  .shots {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .shot {
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-elevated);
+  }
+
+  .shot img {
+    width: 100%;
+    height: auto;
+  }
+
+  .shot figcaption {
+    padding: 1rem 1.25rem;
+    color: var(--text-muted);
+    font-size: 0.92rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
